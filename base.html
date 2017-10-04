@@ -1,0 +1,59 @@
+---
+layout: default
+title: Base
+custom_css: all
+custom_js:
+- attr: custom-template
+  attrval: amp-mustache
+  src: https://cdn.ampproject.org/v0/amp-mustache-0.1.js
+- attr: custom-element
+  attrval: amp-list
+  src: https://cdn.ampproject.org/v0/amp-list-0.1.js
+- attr: custom-element
+  attrval: amp-twitter
+  src: https://cdn.ampproject.org/v0/amp-twitter-0.1.js
+- attr: custom-element
+  attrval: amp-facebook
+  src: https://cdn.ampproject.org/v0/amp-facebook-0.1.js
+- attr: custom-element
+  attrval: amp-youtube
+  src: https://cdn.ampproject.org/v0/amp-youtube-0.1.js
+- attr: custom-element
+  attrval: amp-carousel
+  src: https://cdn.ampproject.org/v0/amp-carousel-0.1.js
+---
+<div class="container">
+
+    <article>
+        <h1>Article Name</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas tortor sapien, non tristique ligula accumsan eu.</p>
+        <amp-img src="/images/mountains.jpg" layout="responsive" height="200" width="300" alt="Mountains"></amp-img>
+    </article>
+
+    <amp-twitter width="500"
+        height="583"
+        layout="responsive"
+        data-tweetid="880065772722073601">
+    </amp-twitter>
+
+    <amp-facebook class="facebook" width="486" height="657"
+        layout="responsive"
+        data-href="https://www.facebook.com/strangecorporation/photos/a.142110429176655.37434.129421787112186/1372136632840689/?type=3&theater">
+    </amp-facebook>
+
+    <amp-youtube class="you-tube" data-videoid="WrpkFROqR0Q"
+        layout="responsive"
+        width="560"
+        height="315">
+    </amp-youtube>
+<amp-carousel layout="fixed-height" height="168" type="carousel" >
+  <amp-img src="/images/mountains.jpg" width="300" height="168"></amp-img>
+  <amp-img src="/images/mountains.jpg" width="300" height="168"></amp-img>
+  <amp-img src="/images/mountains.jpg" width="300" height="168"></amp-img>
+  <amp-img src="/images/mountains.jpg" width="300" height="168"></amp-img>
+  <amp-img src="/images/mountains.jpg" width="300" height="168"></amp-img>
+  <amp-img src="/images/mountains.jpg" width="300" height="168"></amp-img>
+  <amp-img src="/images/mountains.jpg" width="300" height="168"></amp-img>
+  <amp-img src="/images/mountains.jpg" width="300" height="168"></amp-img>
+</amp-carousel>
+</div>

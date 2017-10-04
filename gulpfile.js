@@ -3,6 +3,7 @@ const browserSync = require('browser-sync').create();
 
 const gulp = require('gulp');
 const concat = require('gulp-concat');
+const sourcemaps = require('gulp-sourcemaps');
 const gutil = require('gulp-util');
 const sass = require('gulp-sass');
 
@@ -11,7 +12,13 @@ const cssFiles = '_sass/**/*.?(s)css';
 
 gulp.task('css', () => {
   gulp.src(cssFiles)
-    .pipe(sass())
+        .pipe(sourcemaps.init())
+        .pipe(sass({
+            errLogToConsole: true,
+            outputStyle: 'compressed'
+        }))
+        // Writes sourcemaps into the CSS file
+        .pipe(sourcemaps.write())
     .pipe(concat('all.css'))
     .pipe(gulp.dest('_includes'));
 });
@@ -33,10 +40,6 @@ gulp.task('jekyll', () => {
   jekyll.stderr.on('data', jekyllLogger);
 });
 
-gulp.task('cpcss', () => {
-
-});
-
 gulp.task('serve', () => {
   browserSync.init({
     files: [siteRoot + '/**'],
@@ -45,8 +48,7 @@ gulp.task('serve', () => {
       baseDir: siteRoot
     }
   });
-
   gulp.watch(cssFiles, ['css']);
 });
 
-gulp.task('default', ['css', 'cpcss', 'jekyll', 'serve']);
+gulp.task('default', ['css', 'jekyll', 'serve']);

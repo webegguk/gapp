@@ -1,10 +1,10 @@
 ---
 layout: default
 title: Blog
+custom_css: all
 ---
 <div class="container">
 	<h2 class="spacing">Blog</h2>
-	{% include newsletter.html %}
 	<div class="blog-posts">
 		{% for post in site.posts %}
 			<div class="blog-post spacing">
@@ -19,4 +19,5 @@ title: Blog
 			</div>
 		{% endfor %}
 	</div>
+	{% include newsletter.html %}
 </div>

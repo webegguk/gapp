@@ -1,46 +1,68 @@
 ---
 layout: default
 title: Home
+custom_css: all
+custom_js:
+- attr: custom-template
+  attrval: amp-mustache
+  src: https://cdn.ampproject.org/v0/amp-mustache-0.1.js
+- attr: custom-element
+  attrval: amp-list
+  src: https://cdn.ampproject.org/v0/amp-list-0.1.js
 ---
 <section class="hero">
-	<div class="small-container">
-		<h2>Fresh, homemade baked goods</h2>
-		<p class="sub-text">Bakery<strong>Store</strong> serves the freshest baked goods in San Francisco.</p>
-	</div>
+    <div class="small-container">
+        <h2>Fresh, homemade baked goods</h2>
+        <p class="sub-text">Bakery<strong>Store</strong> serves the freshest baked goods in town.</p>
+    </div>
 </section>
 <div class="container">
-	<p class="post-hero center-text spacing">Bakery<strong>Store</strong> is known for our fresh bread, delicious cupcakes and chocolatey cookies.</p>
+    <p class="post-hero center-text spacing">Bakery<strong>Store</strong> is known for our fresh bread, delicious cupcakes and chocolatey cookies.</p>
 </div>
 <div class="container">
-	<div class="columns spacing">
-		<div class="column half">
-			<img src="/images/bread.jpg" width="430" alt="Bread">
-		</div>
-		<div class="column half">
-			<h3>Fresh Bread</h3>
-			<p>Our bread is baked fresh every morning.</p>
-		</div>
-	</div>
-	<div class="columns spacing">
-		<div class="column half">
-			<h3>Delicious Cupcakes</h3>
-			<p>The best cupcakes in San Francisco.</p>
-		</div>
-		<div class="column half">
-			<img src="/images/cupcake.jpg" width="430" alt="cupcake">
-		</div>
-	</div>
-	<div class="columns spacing">
-		<div class="column half">
-			<img src="/images/cookie.jpg" width="430" alt="cookie">
-		</div>
-		<div class="column half">
-			<h3>Chocolatey cookies</h3>
-			<p>Served with a glass of milk.</p>
-		</div>
-	</div>
+    <div class="columns spacing">
+        <div amp-access="NOT subscriber" amp-access-hide class="column half">
+            You are NOT a subscriber
+        </div>
+        <div amp-access="subscriber" class="column half">
+            <amp-img src="/images/bread.jpg" layout="responsive" height="200" width="300" alt="Bread"></amp-img>
+        </div>
+        <div class="column half">
+            <h3>Fresh Bread</h3>
+            <p>Our bread is baked fresh every morning.</p>
+        </div>
+    </div>
+    <div class="columns spacing">
+        <div class="column half">
+            <h3>Delicious Cupcakes</h3>
+            <p>The best cupcakes in town.</p>
+            <amp-list width="auto"
+                      height="100"
+                      layout="fixed-height"
+                      src="/images/list.json">
+                <template type="amp-mustache">
+                    <div class="url-entry">
+                        <a href="{{ " {{ url " }}}}">{{ "{{ title " }}}}</a>
+                    </div>
+                </template>
+            </amp-list>
 
-	{% include newsletter.html %}
+        </div>
+        <div class="column half">
+            <amp-img src="/images/cupcake.jpg" layout="responsive" height="200" width="300" alt="cupcake"></amp-img>
+        </div>
+    </div>
+    <div class="columns spacing">
+        <div class="column half">
+            <amp-img src="/images/cookie.jpg" layout="responsive" height="200" width="300" alt="cookie"></amp-img>
+        </div>
+        <div class="column half">
+            <h3>Chocolatey cookies</h3>
+            <p>Served with a glass of milk.</p>
+        </div>
+    </div>
 
-	{% include youtube.html youtube_id="YIiHiMXOeYU" %}
+    {% include newsletter.html %}
+
+    <!--{% include youtube.html youtube_id="YIiHiMXOeYU" %}-->
 </div>
