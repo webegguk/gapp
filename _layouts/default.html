@@ -10,7 +10,6 @@
       {% endfor %}
     {% endif %}
 
-    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
 	<title>{{ page.title }}</title>
     <link rel="canonical" href="{{ page.url }}">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -33,7 +32,7 @@
             <style amp-custom>{% include {{stylesheet}}.css %}</style>
         {% endfor %}
 	  {% else %}
-	  <style amp-custom>{% include all.css %}</style>
+	  <style amp-custom>{% include styles.css %}</style>
     {% endif %}
 
 	</head>
@@ -43,7 +42,7 @@
 				<nav class="main-nav">
 					<ul>
 						<li><a href="/">Home</a></li>
-						<li><a href="/blog.html">Blog</a></li>
+						<li><a href="/slides.html">Slides</a></li>
 					</ul>
 				</nav>
 				<h1><a href="/">Google<strong>AMP</strong></a></h1>
@@ -55,7 +54,8 @@
 
 		<footer>
 			<div class="container">
-				<p class="center-text"> <a href="http://cloudcannon.com">Created by StrangeCorp</a></p>
+				<p class="center-text">
+					<a href="http://strangecorp.com">Created by StrangeCorp</a></p>
 			</div>
 		</footer>
 	</body>

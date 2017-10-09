@@ -1,9 +1,10 @@
 ---
 layout: post
 category: Information
-title: Head Sections
-custom_css: all
+title: Basic Requirements
+custom_css: styles
 ---
+The main requirement for implementing an AMP document is that its base code look like this:
 ```html
 <!doctype html>
 <html ⚡ lang="en">
@@ -17,6 +18,18 @@ custom_css: all
     <link rel="canonical" href="/current-page.html">
     
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "NewsArticle",
+        "headline": "Open-source framework for publishing content",
+        "datePublished": "2015-10-07T12:02:41Z",
+        "image": [
+          "logo.jpg"
+        ]
+      }
+    </script>
     
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;
     -moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s
@@ -41,4 +54,14 @@ custom_css: all
 </html>
 ```
 
-Source / Read more [Amp Project](https://www.ampproject.org/docs/tutorials/create/basic_markup)
+<p class="smaller">Source / Read more <a href="https://www.ampproject
+.org/docs/tutorials/create/basic_markup">Amp Project</a></p>
+
+Main points to note are the Lightening Bolt added in, the dependency on Google's main Javascript 
+file, Canonical tags and inline css styles.
+
+Notice the extra attributes added to the style tags, the `amp-boilerplate` tag and its contents 
+are required. The `amp-custom` should have your own styles in it.
+
+The improvements in initial speed are evident with regards to the lack of page reflow though 
+components themselves can take time to load.

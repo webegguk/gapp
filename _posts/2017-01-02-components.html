@@ -1,0 +1,162 @@
+---
+layout: post
+category: Slide
+custom_js:
+- attr: custom-element
+  attrval: amp-carousel
+  src: https://cdn.ampproject.org/v0/amp-carousel-0.1.js
+---
+<!--<p>Responsive images are a common form of media that can benefit from AMP.</p>-->
+
+<div class="row-full">
+        <p>There are many many components that can be used in AMP as well as whole 'Module' like
+            ones such as <a
+                    href="https://ampbyexample.com/introduction/amp_for_e-commerce_getting_started/">shopping carts</a>. Here is a <a
+                    href="https://www.ampproject.org/docs/reference/components">full list</a>.</p>
+        <p>The most useful and basic component is the responsive image. This would be the one
+            used most extensively for AMP documents. It can be placed anywhere on a page with no
+            other intervention beyond the basic requirements of AMP, as explained <a
+                    href="/information/2017/01/01/head-section.html">previously</a>.</p>
+</div>
+<div class="row">
+
+    <div class="col">
+        {% highlight html %}
+<amp-img alt="Crazy cat"
+         src="/images/h-cat-wide.jpg"
+         width="640"
+         height="420"
+         layout="responsive"
+         srcset="/images/h-cat-wide.jpg 640w,
+                 /images/h-cat-narrow.jpg 320w">
+</amp-img>
+        {% endhighlight %}
+    </div>
+
+    <div class="col">
+        <div class="amp-iframe-container spacing">
+            <amp-img alt="Hummingbird"
+                     src="/images/g-cat-wide.jpg"
+                     width="640"
+                     height="420"
+                     layout="responsive"
+                     srcset="/images/g-cat-wide.jpg 640w,
+                             /images/g-cat-narrow.jpg 320w">
+            </amp-img>
+        </div>
+    </div>
+
+</div>
+
+<div class="row-full">
+        <p>Just about all other components in AMP require an accompanying Javascript file from
+            Google to be placed in the head of the page after the initial AMP Javascript. </p>
+        {% highlight js %}
+<script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+        {% endhighlight %}
+        <p>The corresponding html can then be added in the required location further down the
+            page.</p>
+</div>
+
+<div class="row-2">
+
+    <div class="col">
+        <div class="amp-iframe-container spacing">
+
+            <amp-carousel id="carousel-with-preview"
+                          width="450"
+                          height="340"
+                          layout="responsive"
+                          type="slides">
+                <amp-img src="https://www.petfinder.com/wp-content/uploads/2012/11/91615172-find-a-lump-on-cats-skin-632x475.jpg"
+                         width="450"
+                         height="340"
+                         layout="responsive"
+                         alt="apples"></amp-img>
+                <amp-img src="https://static1.squarespace.com/static/5269a983e4b0183a695ff960/t/550090a2e4b0efd5c17be09a/1426100388060/%40tunameltsmyheart-1.jpg?format=1000w"
+                         width="450"
+                         height="340"
+                         layout="responsive"
+                         alt="lemons"></amp-img>
+                <amp-img src="http://www.petguide.com/wp-content/uploads/2016/10/Istanbul-Famous-Fat-Cat-copy.jpg"
+                         width="450"
+                         height="340"
+                         layout="responsive"
+                         alt="blueberries"></amp-img>
+            </amp-carousel>
+            <div class="carousel-preview">
+                <button on="tap:carousel-with-preview.goToSlide(index=0)">
+                    <amp-img src="https://www.petfinder.com/wp-content/uploads/2012/11/91615172-find-a-lump-on-cats-skin-632x475.jpg"
+                             width="60"
+                             height="50"
+                             alt="apples"></amp-img>
+                </button>
+                <button on="tap:carousel-with-preview.goToSlide(index=1)">
+                    <amp-img src="https://static1.squarespace.com/static/5269a983e4b0183a695ff960/t/550090a2e4b0efd5c17be09a/1426100388060/%40tunameltsmyheart-1.jpg?format=1000w"
+                             width="60"
+                             height="50"
+                             alt="lemons"></amp-img>
+                </button>
+                <button on="tap:carousel-with-preview.goToSlide(index=2)">
+                    <amp-img src="http://www.petguide.com/wp-content/uploads/2016/10/Istanbul-Famous-Fat-Cat-copy.jpg"
+                             width="60"
+                             height="50"
+                             alt="blueberries"></amp-img>
+                </button>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <div class="col">
+        {% highlight html %}
+
+<amp-carousel id="carousel-with-preview"
+              width="450"
+              height="300"
+              layout="responsive"
+              type="slides">
+    <amp-img src="images/image1.jpg"
+             width="450"
+             height="300"
+             layout="responsive"
+             alt="apples"></amp-img>
+    <amp-img src="images/image2.jpg"
+             width="450"
+             height="300"
+             layout="responsive"
+             alt="lemons"></amp-img>
+    <amp-img src="images/image3.jpg"
+             width="450"
+             height="300"
+             layout="responsive"
+             alt="blueberries"></amp-img>
+</amp-carousel>
+<div class="carousel-preview">
+    <button on="tap:carousel-with-preview.goToSlide(index=0)">
+        <amp-img src="images/image1.jpg"
+                 width="60"
+                 height="40"
+                 alt="apples"></amp-img>
+    </button>
+    <button on="tap:carousel-with-preview.goToSlide(index=1)">
+        <amp-img src="images/image2.jpg"
+                 width="60"
+                 height="40"
+                 alt="lemons"></amp-img>
+    </button>
+    <button on="tap:carousel-with-preview.goToSlide(index=2)">
+        <amp-img src="images/image3.jpg"
+                 width="60"
+                 height="40"
+                 alt="blueberries"></amp-img>
+    </button>
+</div>
+
+
+        {% endhighlight %}
+    </div>
+
+</div>

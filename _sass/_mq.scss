@@ -1,0 +1,24 @@
+// Mixins created to allow media queries to be included within each style to keep everything together and improve development workflow.
+
+$screen-sm:       599px !default;
+$screen-md:       768px !default;
+$screen-lg:       1024px !default;
+
+@mixin bp-sm($no-query:false) {
+  @media (min-width: #{$screen-sm}) {
+    @content;
+  }
+}
+
+@mixin bp-md($no-query:false) {
+  @media (min-width: #{$screen-md}) {
+    @content;
+  }
+}
+
+@mixin bp-lg($no-query:false) {
+  @media (min-width: #{$screen-lg}) {
+    @content;
+  }
+}
+

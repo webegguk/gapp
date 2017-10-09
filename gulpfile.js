@@ -19,7 +19,7 @@ gulp.task('css', () => {
         }))
         // Writes sourcemaps into the CSS file
         .pipe(sourcemaps.write())
-    .pipe(concat('all.css'))
+    //.pipe(concat('all.css'))
     .pipe(gulp.dest('_includes'));
 });
 

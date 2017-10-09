@@ -1,0 +1,48 @@
+---
+layout: post
+category: Slide
+title: Add-on Pages
+custom_js:
+- attr: custom-element
+  attrval: amp-iframe
+  src: https://cdn.ampproject.org/v0/amp-iframe-0.1.js
+---
+<div class="container">
+
+    <div class="blog-post spacing">
+
+        <div class="amp-iframe-container spacing">
+            <amp-iframe width="500" height="260" class="article"
+                        sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+                        layout="responsive"
+                        frameborder="0"
+                        src="https://www.washingtonpost.com/amphtml/news/the-switch/wp/2017/09/27/no-matter-who-you-are-amazon-wants-you-to-be-using-alexa/">
+                <amp-img layout="fill" src="" placeholder></amp-img>
+            </amp-iframe>
+
+            <p class="spacing">Source / AMP Add-on at
+                <a href="https://www.washingtonpost.com/amphtml/news/worldviews/wp/2017/10/04/boris-johnson-faces-calls-to-resign-after-saying-libyan-city-could-be-a-tourist-hub-once-they-clear-the-dead-bodies-away/">Washington
+                    Post</a></p>
+        </div>
+        <p>This is a good way of introducing Google AMP into existing and/or larger sites that require
+    an SEO boost. The uncertainty of Google AMPs uptake means that moving over to it entirely is
+not a good idea.</p>
+        <p>So far there only appear to be any major AMP enabled sites in the news and media
+            sectors. Ebay do it but not Amazon. Any businesses smaller than the big fish like
+            those mentioned have not jumped on the lightening bolt yet.</p>
+        <p>BBC, NME and Washington Post are three good examples of how this technique has been
+            implemented.</p>
+        <p>They both have two alternatives of their articles. The main site has two tags which,
+            when AMP is installed, will serve up the relevant version to the user on mobile via
+            Googles Javascript!</p>
+        {% highlight html %}<link rel="amphtml" href="https://www.washingtonpost.com/amphtml/news/article-slug/">{% endhighlight %}
+        <a class="example" href="https://www.washingtonpost.com/amphtml/news/the-switch/wp/2017/09/27/no-matter-who-you-are-amazon-wants-you-to-be-using-alexa/">Google AMP version</a>
+        {% highlight html %}<link rel="canonical" href="https://www.washingtonpost.com/news/article-slug/">{% endhighlight %}
+        <a class="example"
+                href="https://www.washingtonpost.com/news/the-switch/wp/2017/09/27/no-matter-who-you-are-amazon-wants-you-to-be-using-alexa/">Standard compliant version</a>
+
+        <p>Notice the difference in the urls showing the pages being served from different
+            locations alongside each other.</p>
+    </div>
+</div>
+
